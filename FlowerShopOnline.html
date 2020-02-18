@@ -1,0 +1,249 @@
+<html>
+<head>
+    <title></title>
+    <script src="Validation.js"></script>
+</head>
+<body>
+    <div class="content">
+        <form onsubmit="return validatemakepayment()" method="post" action="https://i.stack.imgur.com/YbIni.png">
+            <link rel="stylesheet" href="DesignPaymentPage.css" />
+            <div>
+                <header class="title">FLOWER SHOP ONLINE</header>
+            </div>
+            <div class="headerLine">&nbsp;</div>
+            <div class="image_Flower">
+                <img src="Image/Annotation 2020-02-13 120502.png" />
+            </div>
+            <div>
+                <header class="PaymentHeader">Secure Payment Page</header>
+                <table class="tableFirst">
+                    <tr>
+                        <td style="width: 140px;"><b>Select Language</b></td>
+                        <td style="width: 280px;">
+                            <select style="width:200px;">
+                                <option>English</option>
+                                <option>Tamil</option>
+                            </select>
+                        </td>
+                        <td rowspan="4">
+                            <img id="img" src="Image/Logo-Visa-2013.jpg" style="border:1px solid gray" /></td>
+                    </tr>
+                    <tr>
+                        <td >Payment Method</td>
+                        <td><b>Visa</b></td>
+                    </tr>
+                    <tr>
+                        <td >Description</td>
+                        <td ><b>Item Ordered</b></td>
+                    </tr>
+                    <tr>
+                        <td >Amount</td>
+                        <td ><b>&pound;100.00</b></td>
+                    </tr>
+                </table>
+                <div style="display: flex">
+                    <div>
+                        <table class="tablesecond">
+                            <tr>
+                                <td colspan="2" class="tableHeader">Card details</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">You must fill in fields marked with*</td>
+                            </tr>
+                            <tr>
+                                <td>* Card number</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtCardnumber" required="required"/>
+                                    <span id="lblCardNumber" style="display:none;color:red;">Invalid Card Number</span>
+                                    <span id="requiredCardNumber" style="display:none;color:red;">Required Card Number</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* <u>Security Code</u></td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="15" id="txtcode" required="required"/>
+                                    <span id="lblCode" style="display:none;color:red;">Invalid Security Code</span>
+                                    <span id="requiredCode" style="display:none;color:red;">Required Security Code</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* Expiry Date</td>
+                                <td style="margin-top: 5%;">
+                                    <select id="txtmonth" >
+                                        <option value=""></option>
+                                        <option value="01">Jan</option>
+                                        <option value="02">Feb</option>
+                                        <option value="03">Mar</option>
+                                        <option value="04">Apr</option>
+                                        <option value="05">May</option>
+                                        <option value="06">Jun</option>
+                                        <option value="07">Jul</option>
+                                        <option value="08">Aug</option>
+                                        <option value="09">Sep</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                    <select id="txtyear" >
+                                        <option value=""></option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                    <span id="lblExpiryDate" style="display:none;color:red;">Please Select Expiry Date</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* Cardholder's Name</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtname"  required="required"/>
+                                    <span id="lblName" style="display:none;color:red;">Invalid Name</span>
+                                    <span id="requiredName" style="display:none;color:red;">Required Name</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tableHeader">Cardholder details</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">You must fill in fields marked with*</td>
+                            </tr>
+                            <tr>
+                                <td>* Address 1</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtaddress1" required="required" />
+                                    <span id="lblAddress1" style="display:none;color:red;">Invalid Address1</span>
+                                    <span id="requiredAddress1" style="display:none;color:red;">Required Address1</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&ensp;Address 2</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtaddress2"  />
+                                    <span id="lblAddress2" style="display:none;color:red;">Invalid Address2</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&ensp;Address 3</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtaddress3" />
+                                    <span id="lblAddress3" style="display:none;color:red;">Invalid Address3</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* Town/City</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtcity"  required="required"/>
+                                    <span id="lblCity" style="display:none;color:red;">Invalid Town/City</span>
+                                    <span id="requiredCity" style="display:none;color:red;">Required Town/City</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&ensp;Region</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtregion"  />
+                                    <span id="lblRegion" style="display:none;color:red;">Invalid Region</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* Postcode/Zip code</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" id="txtpincode" required="required"/>
+                                    <span id="lblPostcode" style="display:none;color:red;">Invalid Postcode</span>
+                                    <span id="requiredPostcode" style="display:none;color:red;">Required Postcode</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* Country</td>
+                                <td style="margin-top: 5%;">
+                                    <select>
+                                        <option>India</option>
+                                        <option>USA</option>
+                                        <option>France</option>
+                                        <option>Iran</option>
+                                        <option>Germany</option>
+                                        <option>Japan</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&ensp;Telephone</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="25" id="txtphone"  />
+                                    <span id="lblTelephone" style="display:none;color:red;">Invalid Telephone Number</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&ensp;Fax</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="25" id="txtfax"  />
+                                    <span id="lblFax" style="display:none;color:red;">Invalid Fax</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* Email address</td>
+                                <td style="margin-top: 5%;">
+                                    <input type="text" size="50" id="txtemail"  required="required"/>
+                                    <span id="lblEmailId" style="display:none;color:red;">Invalid Email Address</span>
+                                    <span id="requiredEmailId" style="display:none;color:red;">Required Email Address</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="question_image">
+                        <img src="Image/Question.png" />
+                        <img src="Image/Question.png" class="question_image1"/>
+                    </div>
+                </div>
+            </div>
+            <div class="thirdPart"> 
+                <table style="width: 95%;">
+                    <tr>
+                        <td>
+                            <button formnovalidate type="button" class="button" onclick="Refreshbtn()">
+                                <a href="FlowerShopOnline.html" style="text-decoration: none; color: black;">
+                                    <B><img src="Image/refresh_image.png" class="refresh_image"/>START AGAIN</B>
+                                </a>
+                            </button>
+                        </td>
+                        <td style="text-align: right">
+                            <button type="submit" class="button">
+                                <B>MAKE PAYMENT<img src="Image/MakePayment.png" class="makePayment" /></B> 
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button formnovalidate type="button" class="button" onclick="Cancelbtn()">
+                                <a href="https://www.google.com/" style="text-decoration: none; color: black;">
+                                    <B><img src="Image/cancel_image.png" class="refresh_image" />CANCEL</B>
+                                </a> 
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-left: 225px;">
+                <div class="endline">&nbsp;</div>
+                <p class="returns">Refunds and Returns</p>
+                <p class="endfont">For more information Visit our <u>Refunds and Returns Policy</u></p>
+                <div style="display: flex;">
+                    <div class="pay_image">
+                        <img src="Image/pay.png" />
+                    </div>
+                    <div class="endfont2">
+                        For help with your payment visit the <u>Worldpay Help</u>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <footer class="footerline">Thank you for shopping at Flowershop. Have a nice day</footer>
+    </div>
+</body>
+</html>
