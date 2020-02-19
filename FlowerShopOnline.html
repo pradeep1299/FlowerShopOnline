@@ -1,12 +1,12 @@
 <html>
 <head>
     <title></title>
-    <script src="Validation.js"></script>
+    <script src="C:\Users\PRADEEP\Documents\FlowerShopOnline\scripts\Validation.js"></script>
 </head>
 <body>
     <div class="content">
-        <form onsubmit="return validatemakepayment()" method="post" action="https://openjournalsystems.com/wp-content/uploads/2017/07/payment-success.png">
-            <link rel="stylesheet" href="DesignPaymentPage.css" />
+        <form>
+            <link rel="stylesheet" href="C:\Users\PRADEEP\Documents\FlowerShopOnline\styles\DesignPaymentPage.css" />
             <div>
                 <header class="title">FLOWER SHOP ONLINE</header>
             </div>
@@ -53,7 +53,7 @@
                             <tr>
                                 <td>* Card number</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtCardnumber"/>
+                                    <input type="text" size="50" id="txtCardnumber" onchange="validateCardNumber()" maxlength="16" />
                                     <span id="lblCardNumber" style="display:none;color:red;">Invalid Card Number</span>
                                     <span id="requiredCardNumber" style="display:none;color:red;">Required Card Number</span>
                                 </td>
@@ -61,7 +61,7 @@
                             <tr>
                                 <td>* <u>Security Code</u></td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="15" id="txtcode"/>
+                                    <input type="text" size="15" id="txtcode" onchange="validateSecurityCode()" maxlength="3"/>
                                     <span id="lblCode" style="display:none;color:red;">Invalid Security Code</span>
                                     <span id="requiredCode" style="display:none;color:red;">Required Security Code</span>
                                 </td>
@@ -84,7 +84,7 @@
                                         <option value="11">Nov</option>
                                         <option value="12">Dec</option>
                                     </select>
-                                    <select id="txtyear" >
+                                    <select id="txtyear">
                                         <option value=""></option>
                                         <option value="2015">2015</option>
                                         <option value="2016">2016</option>
@@ -103,7 +103,7 @@
                             <tr>
                                 <td>* Cardholder's Name</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtname"/>
+                                    <input type="text" size="50" id="txtname" onchange="validateName()" maxlength="30"/>
                                     <span id="lblName" style="display:none;color:red;">Invalid Name</span>
                                     <span id="requiredName" style="display:none;color:red;">Required Name</span>
                                 </td>
@@ -117,7 +117,7 @@
                             <tr>
                                 <td>* Address 1</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtaddress1" />
+                                    <input type="text" size="50" id="txtaddress1" onchange="validateAddress1()" maxlength="100"/>
                                     <span id="lblAddress1" style="display:none;color:red;">Invalid Address1</span>
                                     <span id="requiredAddress1" style="display:none;color:red;">Required Address1</span>
                                 </td>
@@ -125,21 +125,21 @@
                             <tr>
                                 <td>&ensp;Address 2</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtaddress2"  />
+                                    <input type="text" size="50" id="txtaddress2"  onchange="validateAddress2()" maxlength="100"/>
                                     <span id="lblAddress2" style="display:none;color:red;">Invalid Address2</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>&ensp;Address 3</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtaddress3" />
+                                    <input type="text" size="50" id="txtaddress3" onchange="validateAddress3()" maxlength="100"/>
                                     <span id="lblAddress3" style="display:none;color:red;">Invalid Address3</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>* Town/City</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtcity"/>
+                                    <input type="text" size="50" id="txtcity" onchange="validateCity()" maxlength="30"/>
                                     <span id="lblCity" style="display:none;color:red;">Invalid Town/City</span>
                                     <span id="requiredCity" style="display:none;color:red;">Required Town/City</span>
                                 </td>
@@ -147,14 +147,14 @@
                             <tr>
                                 <td>&ensp;Region</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtregion"  />
+                                    <input type="text" size="50" id="txtregion"  onchange="validateRegion()" maxlength="30"/>
                                     <span id="lblRegion" style="display:none;color:red;">Invalid Region</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>* Postcode/Zip code</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" id="txtpincode"/>
+                                    <input type="text" id="txtpincode" onchange="validatePostCode()" maxlength="6"/>
                                     <span id="lblPostcode" style="display:none;color:red;">Invalid Postcode</span>
                                     <span id="requiredPostcode" style="display:none;color:red;">Required Postcode</span>
                                 </td>
@@ -162,34 +162,36 @@
                             <tr>
                                 <td>* Country</td>
                                 <td style="margin-top: 5%;">
-                                    <select>
-                                        <option>India</option>
-                                        <option>USA</option>
-                                        <option>France</option>
-                                        <option>Iran</option>
-                                        <option>Germany</option>
-                                        <option>Japan</option>
+                                    <select id="txtcountry">
+                                        <option value="">Select Country</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="France">France</option>
+                                        <option value="Iran">Iran</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Japan">Japan</option>
                                     </select>
+                                    <span id="lblCountry" style="display:none;color:red;">Please Select Country</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>&ensp;Telephone</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="25" id="txtphone"  />
+                                    <input type="text" size="25" id="txtphone"  onchange="validateTelephone()" maxlength="10"/>
                                     <span id="lblTelephone" style="display:none;color:red;">Invalid Telephone Number</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>&ensp;Fax</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="25" id="txtfax"  />
+                                    <input type="text" size="25" id="txtfax"  onchange="validateFax()" maxlength="10"/>
                                     <span id="lblFax" style="display:none;color:red;">Invalid Fax</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>* Email address</td>
                                 <td style="margin-top: 5%;">
-                                    <input type="text" size="50" id="txtemail" />
+                                    <input type="text" size="50" id="txtemail" onchange="validateEmail()" maxlength="35"/>
                                     <span id="lblEmailId" style="display:none;color:red;">Invalid Email Address</span>
                                     <span id="requiredEmailId" style="display:none;color:red;">Required Email Address</span>
                                 </td>
@@ -213,7 +215,7 @@
                             </button>
                         </td>
                         <td style="text-align: right">
-                            <button type="submit" class="button" onclick="validatemakepayment()">
+                            <button type="button" class="button" onclick="validatemakepayment()">
                                 <B>MAKE PAYMENT<img src="Image/MakePayment.png" class="makePayment" /></B> 
                             </button>
                         </td>
